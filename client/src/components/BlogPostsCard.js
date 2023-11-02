@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import {motion} from 'framer-motion'
-import Button from './Button';
+import { motion } from 'framer-motion'
+import Button from './Button'
 
 const BlogPostsCard = (props) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false)
 
   const handleMouseEnter = () => {
     setIsHovered(true)
@@ -14,11 +14,10 @@ const BlogPostsCard = (props) => {
   }
 
   return (
-    <motion.div className="w-72 p-1"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+    <motion.div
+      className="w-96 p-1 shadow-md"
       whileHover={{
-        boxShadow: "0px 0px 10px 2px rgba(0,0,0,0.25)"
+        boxShadow: '0px 0px 10px 2px rgba(0,0,0,0.25)',
       }}
     >
       <div className="h-80 overflow-hidden">
@@ -28,20 +27,16 @@ const BlogPostsCard = (props) => {
           alt={props.alt}
         />
       </div>
-      <div className='flex flex-col gap-1'>
-        <h3 className='text-2xl'>{props.title}</h3>
-        <p className='text-sm'>{props.date}</p>
+      <div className="flex flex-col gap-1">
+        <h3 className="text-2xl">{props.title}</h3>
+        <p className="text-sm">{props.date}</p>
       </div>
-      <div className='flex justify-end pt-2'>
+      <div className="flex justify-end pt-2">
         <p>{props.description}</p>
       </div>
-      {isHovered && 
-        <div className='py-3 flex justify-center items-center'>
-          <Button
-            title="Read More"
-          />
-        </div>
-      }
+      <div className="p-5 flex justify-end items-center">
+        <Button title="Read More" />
+      </div>
     </motion.div>
   )
 }

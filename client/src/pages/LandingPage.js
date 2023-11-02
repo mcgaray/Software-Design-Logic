@@ -13,114 +13,113 @@ import BlogPostsCard from '../components/BlogPostsCard'
 import blogPostImage from '../assets/images/blogpost_one.png'
 import Footer from '../components/Footer'
 
-
 const Hero = () => {
-  return(
-    <div className='mx-40 w-auto py-32 gap-8 flex flex-col text-white'>
-      <div className='w-3/5 flex flex-col gap-4'>
-        <h1 className='text-6xl'>
-          Unleash the Magic of AI to Discover Your Perfect Flower! 
+  return (
+    <div className="mx-40 w-auto py-32 gap-8 flex flex-col text-white">
+      <div className="w-3/5 flex flex-col gap-4">
+        <h1 className="text-6xl">
+          Unleash the Magic of AI to Discover Your Perfect Flower!
         </h1>
-        <p className='text-2xl'>
-          Simply click the button below to explore a world of blossoms with our cutting-edge image recognition technology.
+        <p className="text-2xl">
+          Simply click the button below to explore a world of blossoms with our
+          cutting-edge image recognition technology.
         </p>
       </div>
-      <div className=''>
-        <Button
-        title="Search Flower"
-        />
+      <div className="">
+        <Button title="Search Flower" />
       </div>
     </div>
   )
 }
 
 const Collections = (props) => {
-
   const ocassions = [
-    {title: "Love & Romance", image: ""},
-    {title: "Boquets", image: ""},
-    {title: "Inagurals", image: ""},
-    {title: "Condolences", image: ""},
-    {title: "Vase", image: ""},
+    { title: 'Love & Romance', image: '' },
+    { title: 'Boquets', image: '' },
+    { title: 'Inagurals', image: '' },
+    { title: 'Condolences', image: '' },
+    { title: 'Vase', image: '' },
   ]
 
   const mapped = ocassions.map((ocassion) => (
-    <OcassionCard
-      title={ocassion.title}
-      image={ocassionImage}
-    />
+    <OcassionCard title={ocassion.title} image={ocassionImage} />
   ))
 
-  return(
-    <div className='flex flex-col justify-center py-16 items-center'>
-      <div className='text-6xl pb-16'>
-          <h1 className='text-black'>Ocassions</h1>
+  return (
+    <div className="mx-40 flex flex-col justify-center py-16 items-center">
+      <div className="text-6xl pb-16">
+        <h1 className="text-black">Ocassions</h1>
       </div>
-      <div className='mx-40 basis-2/6 flex flex-wrap justify-center gap-3 items-center'> 
+      <div className="mx-40 basis-2/6 flex flex-wrap justify-center gap-3 items-center">
         {mapped}
       </div>
-    </div>  
-)}
+    </div>
+  )
+}
 
 const OurFlowers = () => {
   const [isClicked, setIsClicked] = useState(false)
 
-  return(
-    <div className='flex flex-col justify-center py-20 items-center'>
-      <div className='text-6xl'>
-        <h1 className='text-black'>Our Flowers</h1>
+  return (
+    <div className="flex flex-col justify-center py-20 items-center">
+      <div className="text-6xl">
+        <h1 className="text-black">Our Flowers</h1>
       </div>
-      <div className='py-8 justify-center items-center flex flex-row gap-3'>
-        <button onClick={() => {setIsClicked(false)}}>Featured</button>
-        <p className='text-black'>|</p>
-        <button onClick={() => {setIsClicked(true)}}>Recent</button>
+      <div className="py-8 justify-center items-center flex flex-row gap-3">
+        <button
+          onClick={() => {
+            setIsClicked(false)
+          }}
+          className={isClicked ? '' : 'fonst-bold'}
+        >
+          FEATURED
+        </button>
+        <p className="text-black">|</p>
+        <button
+          onClick={() => {
+            setIsClicked(true)
+          }}
+          className={isClicked ? 'font-bold' : ''}
+        >
+          RECENT
+        </button>
       </div>
-      {
-        isClicked ? 
-          <div>
-            <FlowerCard
-              image={flowerImage}
-              title="Roses are Red"
-              price="1900"
-            />
-          </div>
-        : 
-        <div>
-          <FlowerCard
-            image={flowerImage}
-            title="Blue are blue"
-            price="1900"
-          />
-          <FlowerCard
-            image={flowerImage}
-            title="Blue are blue"
-            price="1900"
-          />
+      {isClicked ? (
+        <div className="flex flex-wrap justify-center items-center flex-row gap-3">
+          <FlowerCard image={flowerImage} title="Roses are Red" price="1900" />
+          <FlowerCard image={flowerImage} title="Blue are blue" price="1900" />
+          <FlowerCard image={flowerImage} title="Blue are blue" price="1900" />
         </div>
-      }
-      <div>
-      </div>
-  </div>
-)}
+      ) : (
+        <div className="flex flex-wrap justify-center items-center flex-row gap-3">
+          <FlowerCard image={flowerImage} title="Blue are blue" price="1900" />
+          <FlowerCard image={flowerImage} title="Blue are blue" price="1900" />
+          <FlowerCard image={flowerImage} title="Blue are blue" price="1900" />
+          <FlowerCard image={flowerImage} title="Blue are blue" price="1900" />
+        </div>
+      )}
+    </div>
+  )
+}
 
 const More = () => {
-  return(
-    <div className='mx-40 p-16 flex gap-8 flex-col justify-content items-center'>
-      <h3 className='text-xl text-center text-white'>
-        "Brighten your world with the elegance of our flower arrangements; each bloom tells a story of beauty and emotion. Let our creations bring a touch of nature's wonder into your life."
+  return (
+    <div className="mx-40 p-16 flex gap-8 flex-col justify-content items-center">
+      <h3 className="text-xl text-center text-white">
+        "Brighten your world with the elegance of our flower arrangements; each
+        bloom tells a story of beauty and emotion. Let our creations bring a
+        touch of nature's wonder into your life."
       </h3>
-      <Button
-        title="More Flowers"
-      />
+      <Button title="More Flowers" />
     </div>
   )
 }
 
 const RecentBlogs = (props) => {
-  return(
-    <div className='flex flex-col justify-center py-20 items-center'>
-      <div className='text-6xl pb-16'>
-        <h1 className='text-black'>Recent Activities</h1>
+  return (
+    <div className="flex flex-col justify-center py-20 items-center">
+      <div className="text-6xl pb-16">
+        <h1 className="text-black">Recent Activities</h1>
       </div>
       <div>
         <BlogPostsCard
@@ -134,13 +133,10 @@ const RecentBlogs = (props) => {
   )
 }
 
-
-
 const LandingPage = () => {
   return (
-    <div>
-
-      <div className='sticky top-0'>
+    <div className="">
+      <div className="sticky top-0">
         <TopBanner
           leftContent="+63 123 123 1234"
           centerContent="Open at 7 am to 10 pm"
@@ -148,40 +144,39 @@ const LandingPage = () => {
         />
       </div>
       <div>
-        <LogoBanner/>
+        <LogoBanner />
       </div>
-      <div className='sticky top-8'>
-        <Navbar/>
-      </div>
-
-      <div className='bg-center bg-cover bg-no-repeat bg-hero-img'> 
-        <Hero/>
+      <div className="sticky top-8">
+        <Navbar />
       </div>
 
-      <div>
-        <Collections/>
-      </div>
-
-      <div className='bg-location-img bg-cover bg-no-repeat bg-center'>
-        <Map/>
+      <div className="bg-center bg-cover bg-no-repeat bg-hero-img">
+        <Hero />
       </div>
 
       <div>
-        <OurFlowers/>
+        <Collections />
       </div>
 
-      <div className='bg-more-img bg-cover bg-no-repeat bg-center'>
-        <More/>
-      </div>
-
-      <div>
-        <RecentBlogs/>
+      <div className="bg-location-img bg-cover bg-no-repeat bg-center">
+        <Map />
       </div>
 
       <div>
-        <Footer/>
+        <OurFlowers />
       </div>
 
+      <div className="bg-more-img bg-cover bg-no-repeat bg-center">
+        <More />
+      </div>
+
+      <div>
+        <RecentBlogs />
+      </div>
+
+      <div>
+        <Footer />
+      </div>
     </div>
   )
 }

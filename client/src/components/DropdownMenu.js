@@ -1,29 +1,8 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { NavLink, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-const Navbar = () => {
-  const flowers = ['Tulips', 'Daisy', 'Rose']
-
-  const ocassions = ['Love and Romance', 'Inagurals', 'Funeral']
-
-  return (
-    <nav className="flex justify-center gap-14 text-sm items-center w-full h-9 text-foreground bg-background">
-      <NavLink to="/">HOME</NavLink>
-      <NavMenuDropdown title="FLOWERS" items={flowers} />
-      <NavMenuDropdown title="OCASSIONS" items={ocassions} />
-      <NavLink to="/ai-finder">AI-FINDER</NavLink>
-      <NavLink to="/blogs">BLOGS</NavLink>
-      <NavLink to="/about-us">ABOUT US</NavLink>
-      <NavLink to="/contact">CONTACT</NavLink>
-      <NavLink to="/flower-details">DETAILS</NavLink>
-    </nav>
-  )
-}
-
-export default Navbar
-
-const NavMenuDropdown = (props) => {
+const DropdownMenu = (props) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
   const toggleDropdown = () => {
@@ -38,9 +17,6 @@ const NavMenuDropdown = (props) => {
       onMouseLeave={toggleDropdown}
       className="relative group"
     >
-      <NavLink href="/services" className="text-white">
-        {props.title}
-      </NavLink>
       <AnimatePresence>
         {isDropdownOpen && (
           <motion.div
@@ -60,3 +36,5 @@ const NavMenuDropdown = (props) => {
     </div>
   )
 }
+
+export default DropdownMenu
