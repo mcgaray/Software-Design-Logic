@@ -3,7 +3,6 @@ const mongoose = require('mongoose')
 const ocassionSchema = mongoose.Schema({
     title: {
         type: String,
-        lowercase: true,
         unique: true,
         required: true,
     },

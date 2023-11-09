@@ -15,10 +15,10 @@ module.exports = {
         secondary: '#FAF9F6',
       },
       backgroundImage: {
-        'hero-img': "url('./assets/images/herobg.png')",
-        'location-img': "url('./assets/images/locationbg.png')",
-        'more-img': "url('./assets/images/more-bg.png')",
-        'banner-img': "url('./assets/images/subbanner.png')",
+        'hero-img': "url('./client/assets/images/herobg.png')",
+        'location-img': "url('./client/assets/images/locationbg.png')",
+        'more-img': "url('./client/assets/images/more-bg.png')",
+        'banner-img': "url('./client/assets/images/subbanner.png')",
       },
     },
     screens: {

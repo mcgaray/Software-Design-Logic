@@ -1,14 +1,28 @@
 const mongoose = require('mongoose')
 
-const flowerSchema = mongoose.Schema({
+const productSchema = mongoose.Schema({
     title: {
         type: String,
         unique: true,
         required: true,
     },
-    color: {
+    flowerType: {
         type: String,
         required: true,
+    },
+    price: {
+        type: Number,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: true,
+    },
+    ocassion: [{
+        type: String,
+    },],
+    category: {
+        type: String,
     },
     image: {
         publicId: {
@@ -24,4 +38,4 @@ const flowerSchema = mongoose.Schema({
     timestamps: true,
 })
 
-module.exports = mongoose.model('Flower', flowerSchema)
+module.exports = mongoose.model('Product', productSchema)
